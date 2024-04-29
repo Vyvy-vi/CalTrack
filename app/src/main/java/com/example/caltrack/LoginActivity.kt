@@ -1,11 +1,14 @@
 package com.example.caltrack
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
+import kotlin.math.sign
 
 class LoginActivity : AppCompatActivity() {
     lateinit var  sharedPreferences: SharedPreferences
@@ -14,11 +17,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var currentWeight: TextView
     lateinit var targetWeight: TextView
 
-    val myPreferences = "calTrackLogin"
-    val _name="namekey"
-    val _password="emailKey"
-    val _currentWeight = "currentWeightKey"
-    val _targetWeight = "targetWeightKey"
+    lateinit var signupLink: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,24 +25,46 @@ class LoginActivity : AppCompatActivity() {
 
         name = findViewById(R.id.etName)
         password = findViewById(R.id.etPassword)
-        currentWeight = findViewById(R.id.etCurrentWeight)
-        targetWeight = findViewById(R.id.etTargetWeight)
 
-        sharedPreferences = getSharedPreferences(myPreferences, Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
 
-        name.text = sharedPreferences.getString(_name, "")
-        password.text = sharedPreferences.getString(_password, "")
-        currentWeight.text = sharedPreferences.getString(_currentWeight, "")
-        targetWeight.text = sharedPreferences.getString(_targetWeight, "")
+        name.text = sharedPreferences.getString(Configuration.name, "")
+
+        signupLink = findViewById(R.id.signupLink)
+        signupLink.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun save(view: View?) {
-        val editor = sharedPreferences.edit()
-        editor.putString(_name, name.text.toString())
-        editor.putString(_password, password.text.toString())
-        editor.putString(_currentWeight, currentWeight.text.toString())
-        editor.putString(_targetWeight, targetWeight.text.toString())
-        editor.apply()
+        val name = name.text.toString()
+        val password = password.text.toString()
+
+        if (name == "" || password == "") {
+            Toast.makeText(this,"Fields can't be empty", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (
+            (sharedPreferences.getString(Configuration.name, "") != name)
+            ) {
+            Toast.makeText(this, "Invalid Username", Toast.LENGTH_SHORT).show()
+        }
+        else if (
+            (sharedPreferences.getString(Configuration.password, "") != password)
+        ) {
+            Toast.makeText(this, "Invalid Password", Toast.LENGTH_SHORT).show()
+            return
+        } else {
+
+            val editor = sharedPreferences.edit()
+            editor.putBoolean(Configuration.loggedIn, true)
+            editor.apply()
+
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun clear(view: View) {
@@ -54,10 +75,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun get(view: View) {
-        sharedPreferences = getSharedPreferences(myPreferences, Context.MODE_PRIVATE)
-        name.text = sharedPreferences.getString(_name, "")
-        password.text = sharedPreferences.getString(_password, "")
-        currentWeight.text = sharedPreferences.getString(_currentWeight, "")
-        targetWeight.text = sharedPreferences.getString(_targetWeight, "")
+        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        name.text = sharedPreferences.getString(Configuration.name, "")
+        password.text = sharedPreferences.getString(Configuration.password, "")
     }
 }

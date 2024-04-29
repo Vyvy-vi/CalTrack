@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WaterLogActivity"
+    android:orientation="vertical">
+    <fragment
+        android:id="@+id/top_bar"
+        android:name="com.example.caltrack.TopbarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/hero_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        android:src="@drawable/water_glass_image" />
+    <TextView
+        android:id="@+id/heroTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textSize="24dp" />
+    <RatingBar
+        android:id="@+id/water_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:stepSize="0.5"
+        android:rating="0"
+        style="@style/CustomRatingBarStyle"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/water_log_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Water to log: 0 ml"
+        android:textSize="24dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"></TextView>
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add water log"
+        android:layout_margin="48dp"
+        android:textSize="20dp"
+        ></Button>
+</LinearLayout>

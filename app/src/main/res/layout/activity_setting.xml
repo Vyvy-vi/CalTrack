@@ -1,0 +1,168 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".SettingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/top_bar"
+            android:name="com.example.caltrack.TopbarFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp">
+            <TextView
+                android:id="@+id/uname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Username: "
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Email: "
+                android:textSize="36dp"
+                android:textStyle="bold" />
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:layout_marginTop="14dp"
+            ></Button>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Age"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age (ages 18-50)"
+                android:textSize="22dp"
+                android:inputType="number"/>
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Gender"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/gender_group"
+                android:layout_width="205dp"
+                android:layout_height="32dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:textSize="22dp"
+                    android:text="Male" />
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:textSize="22dp"
+                    android:text="Female" />
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Current Height"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/current_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Current Height (in cm)"
+                android:textSize="22dp"
+                android:inputType="numberDecimal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Current Weight"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/current_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:hint="Current Weight (in kg)"
+                android:inputType="numberDecimal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Target Weight"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/target_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:hint="Target Weight (in kg)"
+                android:inputType="numberDecimal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Activity Level"
+                android:textSize="36dp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/activity_group"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/sedentary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:textSize="22dp"
+                    android:text="Sedentary" />
+                <RadioButton
+                    android:id="@+id/moderate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:textSize="22dp"
+                    android:text="Moderate" />
+                <RadioButton
+                    android:id="@+id/active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:textSize="22dp"
+                    android:text="Active" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="Submit" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

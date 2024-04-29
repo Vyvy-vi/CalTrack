@@ -11,24 +11,25 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     lateinit var  sharedPreferences: SharedPreferences
-    val myPreferences = "calTrackLogin"
-    val _name="namekey"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sharedPreferences = getSharedPreferences(myPreferences, Context.MODE_PRIVATE)
-        sharedPreferences.edit().clear().apply()
+        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        // sharedPreferences.edit().clear().apply()
 
-        val name = sharedPreferences.getString(_name, "")
+        val loggedIn = sharedPreferences.getBoolean(Configuration.loggedIn, false)
+        val name = sharedPreferences.getString(Configuration.name, "")
+        val email = sharedPreferences.getString(Configuration.email, "")
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 val i: Intent
-                i = if (name == "") {
-                    Intent(this, LoginActivity::class.java)
+                if (loggedIn) {
+                    i = Intent(this, DashboardActivity::class.java)
+                } else if (name == "" && email == "") {
+                    i = Intent(this, SignupActivity::class.java)
                 } else {
-                    Intent(this, DashboardActivity::class.java)
+                    i = Intent(this, LoginActivity::class.java)
                 }
                 startActivity(i)
                 finish()
