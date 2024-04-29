@@ -9,9 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.example.caltrack.customviews.ProgressDrawing
-import com.example.caltrack.data.TrackingLog
-import com.example.caltrack.data.TrackingLogItem
+import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.User
+import com.example.caltrack.data.TrackingLog
+
 class DashboardActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var heroTxt: TextView

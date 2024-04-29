@@ -11,4 +11,20 @@
         android:name="com.example.caltrack.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search for food" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_results_list"
+        android:layout_width="match_parent"
+        android.layout_height="match_parent"
+        android:layout_height="wrap_content"/>
+    <fragment
+        android:id="@+id/top_bar2"
+        android:name="com.example.caltrack.TopbarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

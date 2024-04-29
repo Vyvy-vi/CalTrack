@@ -9,9 +9,9 @@ import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.caltrack.R
+import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.TrackingLog
-import com.example.caltrack.data.TrackingLogItem
+import com.example.caltrack.data.WaterLogItem
 import java.time.LocalDateTime
 
 class WaterLogActivity : AppCompatActivity() {
@@ -50,7 +50,7 @@ class WaterLogActivity : AppCompatActivity() {
                 TrackingLog()
             ) as TrackingLog
 
-            logData.logs.add(TrackingLogItem("water", 0f, (rating * 0.25).toFloat(), "$hour:$minute"))
+            logData.water_logs.add(WaterLogItem((rating * 0.25).toFloat(), "$hour:$minute"))
             logData.waterConsumed += (rating * 0.25).toFloat()
 
             InternalStorageHelper(this).writeFile(

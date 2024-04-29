@@ -10,8 +10,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.User
-import kotlinx.coroutines.currentCoroutineContext
 
 fun calculateCalories(W: Float, H: Float, A:Float): Float {
     return ((13.397 * W) + (4.799 * H) - (5.677 * A) + 88.362 - 275).toFloat()

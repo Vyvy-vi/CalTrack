@@ -1,4 +1,4 @@
-package com.example.caltrack
+package com.example.caltrack.data
 
 import android.content.Context
 import android.widget.Toast
