@@ -1,4 +1,4 @@
-package com.example.caltrack
+package com.example.caltrack.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.caltrack.AlertsActivity
+import com.example.caltrack.Configuration
+import com.example.caltrack.DashboardActivity
+import com.example.caltrack.FoodLogActivity
+import com.example.caltrack.LogActivity
+import com.example.caltrack.R
+import com.example.caltrack.SearchActivity
+import com.example.caltrack.SettingActivity
+import com.example.caltrack.WaterLogActivity
 
 class TopbarFragment : Fragment() {
     private lateinit var textView: TextView
@@ -31,7 +40,7 @@ class TopbarFragment : Fragment() {
             textView.text = "Settings"
         } else if (activity is WaterLogActivity) {
             textView.text = "Water Log"
-        } else if (activity is SearchActivity) {
+        } else if (activity is SearchActivity || activity is FoodLogActivity) {
             textView.text = "Food Log"
         }  else if (activity is LogActivity) {
             textView.text = "Log History"

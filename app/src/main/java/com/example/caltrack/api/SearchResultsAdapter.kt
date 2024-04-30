@@ -13,7 +13,7 @@ class SearchResultsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
 }
 
 
-class SearchResultsAdapter(private var items: List<FoodItem>) :
+class SearchResultsAdapter(private var items: List<FoodItem>, private val clickListener: SearchResultClickListener) :
     RecyclerView.Adapter<SearchResultsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultsViewHolder {
@@ -26,13 +26,16 @@ class SearchResultsAdapter(private var items: List<FoodItem>) :
         val item = items[position]
         holder.foodIdTextView.text = (position + 1).toString() + "."
         holder.foodNameTextView.text = item.food_name
-        // You can add logic to display other information from the FoodItem object
+
+        holder.itemView.setOnClickListener {
+            clickListener.onSearchResultClick(item.food_name, item.photo.thumb)
+        }
     }
 
     override fun getItemCount(): Int = items.size
 
     fun updateItems(newItems: List<FoodItem>) {
         items = newItems
-        notifyDataSetChanged() // Notify the adapter about data change
+        notifyDataSetChanged()
     }
 }

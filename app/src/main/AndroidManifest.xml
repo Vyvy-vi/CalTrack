@@ -19,6 +19,9 @@
         android:theme="@style/Theme.CalTrack"
         tools:targetApi="31">
         <activity
+            android:name=".FoodLogActivity"
+            android:exported="false" />
+        <activity
             android:name=".AlertsActivity"
             android:exported="false" />
         <activity
@@ -53,6 +56,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".AlarmManagerBroadcast" />
 
         <service

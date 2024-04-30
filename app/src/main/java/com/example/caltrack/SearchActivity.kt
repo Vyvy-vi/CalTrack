@@ -1,5 +1,6 @@
 package com.example.caltrack
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,12 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.caltrack.api.ApiService
 import com.example.caltrack.api.FoodItem
+import com.example.caltrack.api.SearchResultClickListener
 import com.example.caltrack.api.SearchResultsAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity(), SearchResultClickListener {
     private lateinit var searchBar: EditText
     private lateinit var searchResultsList: RecyclerView
     private lateinit var adapter: SearchResultsAdapter
@@ -32,7 +34,7 @@ class SearchActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         searchResultsList.layoutManager = layoutManager
 
-        adapter = SearchResultsAdapter(searchResults)
+        adapter = SearchResultsAdapter(searchResults, this)
         searchResultsList.adapter = adapter
 
         searchBar.setOnKeyListener(object : View.OnKeyListener {
@@ -47,6 +49,7 @@ class SearchActivity : AppCompatActivity() {
             }
         })
     }
+
     private fun fetchSearchResults(query: String) {
         // Use Coroutines for asynchronous network call
         CoroutineScope(Dispatchers.IO).launch {
@@ -76,6 +79,14 @@ class SearchActivity : AppCompatActivity() {
                 Log.e("SearchActivity", "Error fetching search results: $errorString")
             }
         }
+    }
+
+    override fun onSearchResultClick(foodName: String, photoUrl: String) {
+        // Handle click on a specific food item (e.g., navigate to a detail activity)
+        val intent = Intent(this, FoodLogActivity::class.java)
+        intent.putExtra("foodName", foodName)
+        intent.putExtra("photoUrl", photoUrl)
+        startActivity(intent)
     }
 
 }

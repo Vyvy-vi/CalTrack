@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity"
-    android:orientation="vertical">
+    tools:context=".SearchActivity">
     <fragment
         android:id="@+id/top_bar"
-        android:name="com.example.caltrack.TopbarFragment"
+        android:name="com.example.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+    <com.example.caltrack.customviews.CustomEditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search for food" />
+        app:setHint="Search for food"
+        app:setColor="true"
+        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="10dp"
+        android:textSize="24dp"
+        android:layout_below="@+id/top_bar"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results_list"
         android:layout_width="match_parent"
-        android.layout_height="match_parent"
-        android:layout_height="wrap_content"/>
-    <fragment
-        android:id="@+id/top_bar2"
-        android:name="com.example.caltrack.TopbarFragment"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+        android:layout_above="@+id/bottom_bar"/>
+    <TextView
+        android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Powered by Nutrionix"
+        android:textSize="26dp"
+        android:paddingVertical="2dp"
+        android:paddingHorizontal="55dp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:drawableLeft="@drawable/icon_nix" />
+</RelativeLayout>
