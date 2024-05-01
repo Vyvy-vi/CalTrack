@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".LogActivity">
+
     <fragment
         android:id="@+id/top_bar"
         android:name="com.example.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
 
-</LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_panel"
+        android:layout_below="@id/top_bar"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/all_logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="All Logs" />
+
+        <Button
+            android:id="@+id/water_logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="Water logs" />
+
+        <Button
+            android:id="@+id/food_logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="Food Logs" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/log_fragment_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_panel">
+    </FrameLayout>
+</RelativeLayout>

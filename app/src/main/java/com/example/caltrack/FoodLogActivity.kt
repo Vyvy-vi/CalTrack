@@ -32,7 +32,10 @@ class FoodLogActivity : AppCompatActivity(), OnDataListener {
     }
 
     override fun communicate(msg: String) {
-        var obj:FoodLogOutputFragment  = supportFragmentManager.findFragmentById(R.id.log_output) as FoodLogOutputFragment
-        obj.displayReceivedData(msg)
+        if (msg != "") {
+            var obj: FoodLogOutputFragment =
+                supportFragmentManager.findFragmentById(R.id.log_output) as FoodLogOutputFragment
+            obj.displayReceivedData(msg.toFloat(), foodName)
+        }
     }
 }

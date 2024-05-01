@@ -9,35 +9,36 @@
         android:id="@+id/macros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Macronutrients Breakdown"
         android:textSize="20dp"
-        android:layout_margin="10dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginVertical="60dp"
-        >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Protein" />
+
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
                 android:src="@drawable/ic_fire" />
+
             <TextView
                 android:id="@+id/proteinTxt"
                 android:layout_width="wrap_content"
@@ -45,23 +46,26 @@
                 android:text="0g" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fat" />
+
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
                 android:src="@drawable/ic_fire" />
+
             <TextView
                 android:id="@+id/fatTxt"
                 android:layout_width="wrap_content"
@@ -69,23 +73,26 @@
                 android:text="0g" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Carbs" />
+
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
                 android:src="@drawable/ic_fire" />
+
             <TextView
                 android:id="@+id/carbsTxt"
                 android:layout_width="wrap_content"
@@ -93,23 +100,26 @@
                 android:text="0g" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fiber" />
+
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
                 android:src="@drawable/ic_fire" />
+
             <TextView
                 android:id="@+id/fiberTxt"
                 android:layout_width="wrap_content"
@@ -119,5 +129,23 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/calories_count"
+        android:textSize="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="178dp"
+        android:text="0 kcal"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="230dp"
+        android:text="Add Food Log"
+        android:textSize="20dp" />
 
 </FrameLayout>

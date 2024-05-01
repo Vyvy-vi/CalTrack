@@ -46,11 +46,11 @@
         android:textStyle="bold"></TextView>
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="48dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_gravity="center"
         android:text="Add water log"
-        android:layout_margin="48dp"
-        android:textSize="20dp"
-        ></Button>
+        android:textSize="20dp"/>
 </LinearLayout>

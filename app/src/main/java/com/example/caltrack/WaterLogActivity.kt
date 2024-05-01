@@ -29,13 +29,12 @@ class WaterLogActivity : AppCompatActivity() {
         val waterConsumed = getIntent().getExtras()?.getFloat("consumed")
         val waterTotal = getIntent().getExtras()?.getFloat("total")
 
-        heroTxt.text = """${waterConsumed?.toInt()} of ${waterTotal?.toInt()} L consumed"""
+        heroTxt.text = """${"%.2f".format(waterConsumed)} of ${"%.2f".format(waterTotal)} L consumed"""
 
         val waterRating = findViewById<RatingBar>(R.id.water_rating)
         val submitButton = findViewById<Button>(R.id.submit_button)
 
         submitButton.setOnClickListener {
-            val totalStars = waterRating .numStars
             val rating = waterRating .rating
             val current = LocalDateTime.now()
             val hour = current.hour
@@ -62,7 +61,7 @@ class WaterLogActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        waterRating .setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
+        waterRating.setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
             val volume = if (rating * 250 >= 1000) {
                 "${rating * 0.25} L"
             } else {

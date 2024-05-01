@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
 
         signupLink = findViewById(R.id.signupLink)
         signupLink.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
     }
