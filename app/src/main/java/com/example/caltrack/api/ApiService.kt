@@ -5,10 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object ApiService {
-    private val retrofit = Retrofit.Builder()
+    private val retrofit by lazy{ Retrofit.Builder()
         .baseUrl("https://trackapi.nutritionix.com/")
         .addConverterFactory(GsonConverterFactory.create())
-        .build()
+        .build()}
 
-    val _interface: ApiInterface = retrofit.create(ApiInterface::class.java)
+    val _interface: ApiInterface by lazy {
+        retrofit.create(ApiInterface::class.java)
+    }
 }

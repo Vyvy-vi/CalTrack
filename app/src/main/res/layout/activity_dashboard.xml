@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,18 +11,22 @@
         android:id="@+id/top_bar"
         android:name="com.example.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
 
     <FrameLayout
         android:id="@+id/dashboard"
         android:layout_width="match_parent"
-        android:layout_height="260dp" />
+        android:layout_height="260dp"
+        android:layout_below="@+id/top_bar"/>
 
     <LinearLayout
+        android:id="@+id/display_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/dashboard">
 
         <ImageView
             android:id="@+id/calories_icon"
@@ -56,14 +60,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_below="@+id/display_txt"/>
 
     <TextView
         android:id="@+id/heroDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_below="@+id/heroTxt"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -71,13 +77,16 @@
         android:columnCount="2"
         android:gravity="center"
         android:rowCount="2"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_below="@+id/heroDesc"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/logfoodBtn"
             android:paddingVertical="30dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:maxHeight="40dp"
             android:layout_margin="10dp"
             android:textSize="20dp"
             android:drawableTop="@drawable/ic_log"
@@ -116,4 +125,4 @@
             android:text="Alerts" />
 
     </GridLayout>
-</LinearLayout>
+</RelativeLayout>

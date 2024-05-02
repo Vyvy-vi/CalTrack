@@ -3,6 +3,8 @@ package com.example.caltrack
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
@@ -37,15 +39,15 @@ class SearchActivity : AppCompatActivity(), SearchResultClickListener {
         adapter = SearchResultsAdapter(searchResults, this)
         searchResultsList.adapter = adapter
 
-        searchBar.setOnKeyListener(object : View.OnKeyListener {
-            override fun onKey(v: View?, keyCode: Int, event: KeyEvent?): Boolean {
-                if (event?.action == KeyEvent.ACTION_DOWN) {
-                    val query = searchBar.text.toString().trim()
-                    if (query.isNotEmpty()) {
-                        fetchSearchResults(query)
-                    }
+        searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            }
+            override fun afterTextChanged(s: Editable) {
+                val query = searchBar.text.toString().trim()
+                if (query.isNotEmpty()) {
+                    fetchSearchResults(query)
                 }
-                return false
             }
         })
     }
@@ -53,6 +55,7 @@ class SearchActivity : AppCompatActivity(), SearchResultClickListener {
     private fun fetchSearchResults(query: String) {
         // Use Coroutines for asynchronous network call
         CoroutineScope(Dispatchers.IO).launch {
+            Log.i("SearchActivity", "fetching results for query: $query")
             val response = try {
                 ApiService._interface.search(query)
             } catch (e: Exception) {
@@ -61,8 +64,10 @@ class SearchActivity : AppCompatActivity(), SearchResultClickListener {
                 return@launch
             }
 
+            Log.i("Search API", "Calling API")
             if (response.isSuccessful) {
                 val searchResponse = response.body()
+                Log.i("Search API", "Response " + searchResponse.toString())
                 if (searchResponse != null) {
                     searchResults = searchResponse.common
                     runOnUiThread {

@@ -20,7 +20,8 @@
         android:layout_marginHorizontal="10dp"
         android:paddingHorizontal="10dp"
         android:textSize="24dp"
-        android:layout_below="@+id/top_bar"/>
+        android:layout_below="@+id/top_bar"
+        android:singleLine="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results_list"

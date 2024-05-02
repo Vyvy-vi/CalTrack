@@ -37,7 +37,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
-                android:src="@drawable/ic_fire" />
+                android:src="@drawable/ic_protein" />
 
             <TextView
                 android:id="@+id/proteinTxt"
@@ -64,7 +64,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
-                android:src="@drawable/ic_fire" />
+                android:src="@drawable/ic_fat" />
 
             <TextView
                 android:id="@+id/fatTxt"
@@ -91,7 +91,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
-                android:src="@drawable/ic_fire" />
+                android:src="@drawable/ic_carbs" />
 
             <TextView
                 android:id="@+id/carbsTxt"
@@ -118,7 +118,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/icon_background"
                 android:padding="10dp"
-                android:src="@drawable/ic_fire" />
+                android:src="@drawable/ic_fiber" />
 
             <TextView
                 android:id="@+id/fiberTxt"

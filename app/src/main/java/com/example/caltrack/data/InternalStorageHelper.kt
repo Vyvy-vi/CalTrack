@@ -12,7 +12,7 @@ class InternalStorageHelper(private val context: Context) {
             val fOut = context.openFileOutput(fileName, Context.MODE_PRIVATE)
             fOut.write(jsonData.toByteArray())
             fOut.close()
-            showToast("File updated successfully")
+            // showToast("File updated successfully")
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -32,7 +32,7 @@ class InternalStorageHelper(private val context: Context) {
             jsonString = temp.toString()
             println(jsonString)
             fIn.close()
-            showToast("Data fetched from file successfully")
+            // showToast("Data fetched from file successfully")
             obj = gson.fromJson(jsonString, data::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
