@@ -8,10 +8,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import kotlin.math.sign
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var  sharedPreferences: SharedPreferences
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var name: TextView
     lateinit var password: TextView
     lateinit var currentWeight: TextView
@@ -26,7 +25,8 @@ class LoginActivity : AppCompatActivity() {
         name = findViewById(R.id.etName)
         password = findViewById(R.id.etPassword)
 
-        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        sharedPreferences =
+            getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
 
         name.text = sharedPreferences.getString(Configuration.name, "")
 
@@ -42,16 +42,15 @@ class LoginActivity : AppCompatActivity() {
         val password = password.text.toString()
 
         if (name == "" || password == "") {
-            Toast.makeText(this,"Fields can't be empty", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Fields can't be empty", Toast.LENGTH_SHORT).show()
             return
         }
 
         if (
             (sharedPreferences.getString(Configuration.name, "") != name)
-            ) {
+        ) {
             Toast.makeText(this, "Invalid Username", Toast.LENGTH_SHORT).show()
-        }
-        else if (
+        } else if (
             (sharedPreferences.getString(Configuration.password, "") != password)
         ) {
             Toast.makeText(this, "Invalid Password", Toast.LENGTH_SHORT).show()
@@ -75,7 +74,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun get(view: View) {
-        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        sharedPreferences =
+            getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
         name.text = sharedPreferences.getString(Configuration.name, "")
         password.text = sharedPreferences.getString(Configuration.password, "")
     }

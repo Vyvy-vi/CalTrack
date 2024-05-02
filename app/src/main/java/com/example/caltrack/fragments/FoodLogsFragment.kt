@@ -9,22 +9,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.caltrack.Configuration
-import com.example.caltrack.DashboardActivity
 import com.example.caltrack.R
-import com.example.caltrack.api.FoodNutritionDetails
-import com.example.caltrack.api.SearchResultsAdapter
-import com.example.caltrack.data.FoodLogItem
 import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.LogAdapter
 import com.example.caltrack.data.TrackingLog
-import java.time.LocalDateTime
 
 class FoodLogsFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences

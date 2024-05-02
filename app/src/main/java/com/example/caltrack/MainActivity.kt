@@ -7,15 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    lateinit var  sharedPreferences: SharedPreferences
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        sharedPreferences =
+            getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
         // sharedPreferences.edit().clear().apply()
 
         val loggedIn = sharedPreferences.getBoolean(Configuration.loggedIn, false)
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 startActivity(i)
                 finish()
-            },5000
+            }, 5000
         )
     }
 }

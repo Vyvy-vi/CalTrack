@@ -33,16 +33,18 @@ class TopbarFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_topbar, container, false)
         textView = view.findViewById(R.id.bar_title)
         val activity = requireActivity() as AppCompatActivity
-        sharedPreferences = activity.getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        sharedPreferences =
+            activity.getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
         if (activity is DashboardActivity) {
-            textView.text = "Welcome back, " + sharedPreferences.getString(Configuration.name, "friend") + "!"
+            textView.text =
+                "Welcome back, " + sharedPreferences.getString(Configuration.name, "friend") + "!"
         } else if (activity is SettingActivity) {
             textView.text = "Settings"
         } else if (activity is WaterLogActivity) {
             textView.text = "Water Log"
         } else if (activity is SearchActivity || activity is FoodLogActivity) {
             textView.text = "Food Log"
-        }  else if (activity is LogActivity) {
+        } else if (activity is LogActivity) {
             textView.text = "Log History"
         } else if (activity is AlertsActivity) {
             textView.text = "Alerts"

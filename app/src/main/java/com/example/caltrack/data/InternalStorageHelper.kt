@@ -6,7 +6,7 @@ import com.google.gson.Gson
 
 class InternalStorageHelper(private val context: Context) {
     private val gson = Gson()
-    fun writeFile(fileName:String, data: Any) {
+    fun writeFile(fileName: String, data: Any) {
         try {
             val jsonData = gson.toJson(data)
             val fOut = context.openFileOutput(fileName, Context.MODE_PRIVATE)

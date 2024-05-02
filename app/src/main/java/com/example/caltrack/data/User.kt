@@ -1,4 +1,5 @@
 package com.example.caltrack.data
+
 data class User(
     val name: String = "",
     val age: Int = 0,

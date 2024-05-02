@@ -1,7 +1,6 @@
 package com.example.caltrack.fragments
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
@@ -9,23 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.caltrack.Configuration
-import com.example.caltrack.DashboardActivity
 import com.example.caltrack.R
-import com.example.caltrack.api.FoodNutritionDetails
-import com.example.caltrack.api.SearchResultsAdapter
-import com.example.caltrack.data.FoodLogItem
 import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.LogAdapter
 import com.example.caltrack.data.LogEntry
 import com.example.caltrack.data.TrackingLog
-import java.time.LocalDateTime
 
 class AllLogsFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
@@ -55,7 +46,11 @@ class AllLogsFragment : Fragment() {
         } as TrackingLog
 
         val logs: List<LogEntry> = (
-                logData.water_logs.flatMap { listOf<LogEntry>(it) } + logData.food_logs.flatMap { listOf<LogEntry>(it) }
+                logData.water_logs.flatMap { listOf<LogEntry>(it) } + logData.food_logs.flatMap {
+                    listOf<LogEntry>(
+                        it
+                    )
+                }
                 )
 
         logsList = v.findViewById<RecyclerView>(R.id.log_list)

@@ -17,11 +17,12 @@ import java.time.LocalDateTime
 class WaterLogActivity : AppCompatActivity() {
     lateinit var heroTxt: TextView
     lateinit var logTxt: TextView
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_water_log)
-        val bundle:Bundle? = intent.extras
+
         heroTxt = findViewById(R.id.heroTxt)
         logTxt = findViewById(R.id.water_log_txt)
 
@@ -29,13 +30,14 @@ class WaterLogActivity : AppCompatActivity() {
         val waterConsumed = getIntent().getExtras()?.getFloat("consumed")
         val waterTotal = getIntent().getExtras()?.getFloat("total")
 
-        heroTxt.text = """${"%.2f".format(waterConsumed)} of ${"%.2f".format(waterTotal)} L consumed"""
+        heroTxt.text =
+            """${"%.2f".format(waterConsumed)} of ${"%.2f".format(waterTotal)} L consumed"""
 
         val waterRating = findViewById<RatingBar>(R.id.water_rating)
         val submitButton = findViewById<Button>(R.id.submit_button)
 
         submitButton.setOnClickListener {
-            val rating = waterRating .rating
+            val rating = waterRating.rating
             val current = LocalDateTime.now()
             val hour = current.hour
             val minute = current.minute
@@ -56,12 +58,16 @@ class WaterLogActivity : AppCompatActivity() {
                 name + "_log.json",
                 logData
             )
-            Toast.makeText(this,"logging ${rating} glasses - ${volume} at $hour:$minute",Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "logging ${rating} glasses - ${volume} at $hour:$minute",
+                Toast.LENGTH_SHORT
+            ).show()
             val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         }
 
-        waterRating.setOnRatingBarChangeListener{ ratingBar, rating, fromUser ->
+        waterRating.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
             val volume = if (rating * 250 >= 1000) {
                 "${rating * 0.25} L"
             } else {

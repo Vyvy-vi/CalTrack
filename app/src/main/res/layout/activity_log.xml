@@ -15,9 +15,9 @@
         android:layout_alignParentTop="true" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/button_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button_panel"
         android:layout_below="@id/top_bar"
         android:orientation="horizontal">
 
@@ -45,10 +45,10 @@
             android:layout_weight="1"
             android:text="Food Logs" />
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/log_fragment_frame"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/button_panel">
-    </FrameLayout>
+        android:layout_below="@id/button_panel"></FrameLayout>
 </RelativeLayout>

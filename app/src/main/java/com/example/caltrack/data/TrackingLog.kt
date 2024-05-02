@@ -1,4 +1,5 @@
 package com.example.caltrack.data
+
 data class TrackingLog(
     var caloriesConsumed: Float = 0f,
     var waterConsumed: Float = 0f,

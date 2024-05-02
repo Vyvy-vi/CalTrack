@@ -12,21 +12,21 @@
         android:name="com.example.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
     <FrameLayout
         android:id="@+id/dashboard"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:layout_below="@+id/top_bar"/>
+        android:layout_below="@+id/top_bar" />
 
     <LinearLayout
         android:id="@+id/display_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/dashboard"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_below="@+id/dashboard">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/calories_icon"
@@ -58,71 +58,75 @@
         android:id="@+id/heroTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/display_txt"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:textSize="20dp"
-        android:layout_below="@+id/display_txt"/>
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/heroDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/heroTxt"
         android:layout_margin="10dp"
-        android:gravity="center"
-        android:layout_below="@+id/heroTxt"/>
+        android:gravity="center" />
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/heroDesc"
+        android:layout_alignParentBottom="true"
         android:columnCount="2"
         android:gravity="center"
-        android:rowCount="2"
-        android:padding="10dp"
-        android:layout_below="@+id/heroDesc"
-        android:layout_alignParentBottom="true">
+        android:rowCount="2">
 
         <Button
             android:id="@+id/logfoodBtn"
-            android:paddingVertical="30dp"
-            android:layout_columnWeight="1"
+            android:background="@drawable/button_card_background"
+            android:layout_height="74dp"
             android:layout_rowWeight="1"
-            android:maxHeight="40dp"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:textSize="20dp"
             android:drawableTop="@drawable/ic_log"
+            android:paddingVertical="30dp"
             android:text="Log Food"
-            />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/logWaterBtn"
-            android:paddingVertical="30dp"
-            android:layout_columnWeight="1"
+            android:background="@drawable/button_card_background"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:textSize="20dp"
             android:drawableTop="@drawable/ic_waterlog"
+            android:paddingVertical="30dp"
             android:text="Log Water"
-            />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/historyBtn"
-            android:paddingVertical="30dp"
-            android:layout_columnWeight="1"
+            android:background="@drawable/button_card_background"
+            android:layout_height="93dp"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:textSize="20dp"
             android:drawableTop="@drawable/ic_history"
-            android:text="History" />
+            android:paddingVertical="30dp"
+            android:text="History"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/alertBtn"
-            android:paddingVertical="30dp"
-            android:layout_columnWeight="1"
+            android:background="@drawable/button_card_background"
+            android:layout_height="97dp"
             android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:textSize="20dp"
             android:drawableTop="@drawable/ic_alerts"
-            android:text="Alerts" />
+            android:paddingVertical="30dp"
+            android:text="Alerts"
+            android:textSize="20dp" />
 
     </GridLayout>
 </RelativeLayout>

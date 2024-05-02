@@ -26,7 +26,8 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        sharedPreferences = getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
+        sharedPreferences =
+            getSharedPreferences(Configuration.sharedPreferences, Context.MODE_PRIVATE)
 
         val userData = InternalStorageHelper(this).readFile(
             sharedPreferences.getString(Configuration.name, "") + ".json",
@@ -38,12 +39,20 @@ class DashboardActivity : AppCompatActivity() {
             TrackingLog()
         ) as TrackingLog
 
-        val customView = ProgressDrawing(this, logData.caloriesConsumed, logData.waterConsumed, userData.dailyCalories.toInt(), userData.dailyWater.toInt())
-        val rootView = findViewById<ViewGroup>(R.id.dashboard) // Replace with the ID of your root view
+        val customView = ProgressDrawing(
+            this,
+            logData.caloriesConsumed,
+            logData.waterConsumed,
+            userData.dailyCalories.toInt(),
+            userData.dailyWater.toInt()
+        )
+        val rootView =
+            findViewById<ViewGroup>(R.id.dashboard) // Replace with the ID of your root view
         rootView.addView(customView)
 
         heroTxt = findViewById(R.id.heroTxt)
-        heroTxt.text = """${logData.caloriesConsumed.toInt()} of ${userData.dailyCalories.toInt()} Cal consumed"""
+        heroTxt.text =
+            """${logData.caloriesConsumed.toInt()} of ${userData.dailyCalories.toInt()} Cal consumed"""
 
         heroDesc = findViewById(R.id.heroDesc)
         heroDesc.text = """Your maintainence calories are ${userData.dailyCalories + 250}kcal. 

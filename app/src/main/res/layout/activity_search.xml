@@ -5,40 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
+
     <fragment
         android:id="@+id/top_bar"
         android:name="com.example.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
+
     <com.example.caltrack.customviews.CustomEditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:setHint="Search for food"
-        app:setColor="true"
+        android:layout_below="@+id/top_bar"
         android:layout_marginHorizontal="10dp"
         android:paddingHorizontal="10dp"
+        android:singleLine="true"
         android:textSize="24dp"
-        android:layout_below="@+id/top_bar"
-        android:singleLine="true"/>
+        app:setColor="true"
+        app:setHint="Search for food" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_results_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_bar"
-        android:layout_above="@+id/bottom_bar"/>
+        android:layout_above="@+id/bottom_bar"
+        android:layout_below="@id/search_bar" />
+
     <TextView
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:drawableLeft="@drawable/icon_nix"
         android:gravity="center"
+        android:paddingHorizontal="55dp"
+        android:paddingVertical="2dp"
         android:text="Powered by Nutrionix"
         android:textSize="26dp"
-        android:paddingVertical="2dp"
-        android:paddingHorizontal="55dp"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:drawableLeft="@drawable/icon_nix" />
+        android:textStyle="bold" />
 </RelativeLayout>

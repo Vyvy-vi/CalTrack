@@ -12,30 +12,31 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.res.ResourcesCompat
 import com.example.caltrack.R
 
-class CustomEditText (context: Context, attrs: AttributeSet?) : AppCompatEditText(context, attrs){
+class CustomEditText(context: Context, attrs: AttributeSet?) : AppCompatEditText(context, attrs) {
     private var sethint: String? = null
     private var setcolor = false
 
-    var darkButton : Drawable? = null
+    var darkButton: Drawable? = null
     var lightButton: Drawable? = null
 
-    fun init(){
+    fun init() {
         darkButton = ResourcesCompat.getDrawable(resources, R.drawable.ic_clear_black_24dp, null)
         lightButton = ResourcesCompat.getDrawable(resources, R.drawable.ic_clear_black_22dp, null)
 
         addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after:Int){}
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int){
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 showButton()
                 show()
             }
+
             override fun afterTextChanged(s: Editable) {}
         })
     }
 
     fun show() {
         setOnTouchListener { view, motionEvent ->
-            var isclicked:Boolean = false
+            var isclicked: Boolean = false
 
             val clearButtonstart = (width - paddingEnd - darkButton!!.intrinsicWidth).toFloat()
             if (motionEvent.x > clearButtonstart) {
@@ -62,8 +63,8 @@ class CustomEditText (context: Context, attrs: AttributeSet?) : AppCompatEditTex
 
     init {
         val tarry: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomEditText)
-        try{
-            sethint =  tarry.getString(R.styleable.CustomEditText_setHint)
+        try {
+            sethint = tarry.getString(R.styleable.CustomEditText_setHint)
 
             if (sethint == null)
                 setHint("Enter yout message")
@@ -74,8 +75,7 @@ class CustomEditText (context: Context, attrs: AttributeSet?) : AppCompatEditTex
 
             if (setcolor)
                 setTextColor(Color.MAGENTA)
-        }
-        finally {
+        } finally {
             tarry.recycle()
             init()
         }

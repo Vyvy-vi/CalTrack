@@ -1,5 +1,5 @@
 package com.example.caltrack.api
 
 interface SearchResultClickListener {
-    fun onSearchResultClick(foodName :String, photoUrl: String)
+    fun onSearchResultClick(foodName: String, photoUrl: String)
 }

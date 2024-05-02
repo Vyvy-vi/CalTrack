@@ -7,11 +7,12 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.view.View
 
-class ProgressDrawing(context: Context?,
-                      caloriesCurr: Float,
-                      waterCurr: Float,
-                      caloriesMax: Int,
-                      waterMax: Int
+class ProgressDrawing(
+    context: Context?,
+    caloriesCurr: Float,
+    waterCurr: Float,
+    caloriesMax: Int,
+    waterMax: Int
 ) : View(context) {
     lateinit var paint: Paint
     var sweepCal: Float = 1f
@@ -33,7 +34,7 @@ class ProgressDrawing(context: Context?,
 
     override fun onDraw(canvas: Canvas) {
         val centerX: Float = width / 2.0f
-        val centerY: Float =  400f
+        val centerY: Float = 400f
         val radius1: Float = 150f
         val radius2: Float = 210f
         paint.style = Paint.Style.STROKE
@@ -41,10 +42,24 @@ class ProgressDrawing(context: Context?,
         paint.strokeCap = Paint.Cap.ROUND
 
         paint.color = Color.CYAN
-        canvas.drawArc(RectF(centerX - radius1, centerY - radius1, centerX + radius1, centerY + radius1), -90f, sweepWater, false, paint)
+        canvas.drawArc(
+            RectF(
+                centerX - radius1,
+                centerY - radius1,
+                centerX + radius1,
+                centerY + radius1
+            ), -90f, sweepWater, false, paint
+        )
 
         paint.color = Color.GREEN
-        canvas.drawArc(RectF(centerX - radius2, centerY - radius2, centerX + radius2, centerY + radius2), -90f, sweepCal, false, paint)
+        canvas.drawArc(
+            RectF(
+                centerX - radius2,
+                centerY - radius2,
+                centerX + radius2,
+                centerY + radius2
+            ), -90f, sweepCal, false, paint
+        )
         val paint = Paint()
         paint.textSize = 86f
         paint.color = Color.GREEN

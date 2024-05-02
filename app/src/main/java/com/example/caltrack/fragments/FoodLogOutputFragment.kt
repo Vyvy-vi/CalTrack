@@ -20,11 +20,9 @@ import com.example.caltrack.R
 import com.example.caltrack.api.ApiService
 import com.example.caltrack.api.FoodNutritionDetails
 import com.example.caltrack.api.NutritionQueryRequest
-import com.example.caltrack.api.NutritionResponse
 import com.example.caltrack.data.FoodLogItem
 import com.example.caltrack.data.InternalStorageHelper
 import com.example.caltrack.data.TrackingLog
-import com.example.caltrack.data.WaterLogItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

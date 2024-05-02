@@ -4,40 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/welcome"
-        android:text="Welcome Back"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:textSize="45sp"
-        android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
-    />
+        android:text="Welcome Back"
+        android:textSize="45sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/welcomeTxt"
-        android:text="Login to your account"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="20dp"
-        android:textSize="20sp"
         android:fontFamily="sans-serif-medium"
-    />
+        android:text="Login to your account"
+        android:textSize="20sp" />
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginHorizontal="32dp"
-        app:cardCornerRadius="50dp"
-        app:cardBackgroundColor="#00686B">
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#00686B"
+        app:cardCornerRadius="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,80 +46,83 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Log In"
-                android:textSize="36dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
                 android:fontFamily="sans-serif-medium"
+                android:text="Log In"
                 android:textColor="@color/white"
-                android:textStyle="bold"/>
+                android:textSize="36dp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_background"
                 android:hint="Username"
-                android:textSize="26dp"
                 android:padding="10dp"
-                android:layout_marginBottom="16dp"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textSize="26dp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_background"
                 android:hint="Password"
-                android:textSize="26dp"
-                android:padding="10dp"
-                android:layout_marginBottom="16dp"
                 android:inputType="textPassword"
+                android:padding="10dp"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textSize="26dp" />
 
             <Button
                 android:id="@+id/btnSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOG IN"
-                android:paddingHorizontal="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/white"
-                android:textSize="15dp"
-                android:fontFamily="sans-serif-medium"
                 android:layout_marginBottom="10dp"
-                android:onClick="save"/>
+                android:backgroundTint="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:onClick="save"
+                android:paddingHorizontal="30dp"
+                android:text="LOG IN"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account yet?"
+            android:layout_margin="2dp"
             android:fontFamily="sans-serif-medium"
-            android:layout_margin="2dp"/>
+            android:text="Don't have an account yet?" />
+
         <TextView
             android:id="@+id/signupLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="italic"
-            android:textSize="14sp"
-            android:padding="0dp"
+            android:layout_margin="2dp"
             android:background="@android:color/transparent"
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="sans-serif-medium"
-            android:layout_margin="2dp"/>
+            android:padding="0dp"
+            android:text="Sign Up"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            android:textStyle="italic" />
     </LinearLayout>
 
 </LinearLayout>

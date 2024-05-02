@@ -12,7 +12,10 @@ class SearchResultsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
     val foodNameTextView: TextView = itemView.findViewById(R.id.food_name)
 }
 
-class SearchResultsAdapter(private var items: List<FoodItem>, private val clickListener: SearchResultClickListener) :
+class SearchResultsAdapter(
+    private var items: List<FoodItem>,
+    private val clickListener: SearchResultClickListener
+) :
     RecyclerView.Adapter<SearchResultsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultsViewHolder {

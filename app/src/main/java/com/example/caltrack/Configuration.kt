@@ -1,6 +1,6 @@
 package com.example.caltrack
 
-class Configuration constructor(){
+class Configuration constructor() {
     companion object {
         val sharedPreferences = "calTrackLogin"
         val name = "namekey"

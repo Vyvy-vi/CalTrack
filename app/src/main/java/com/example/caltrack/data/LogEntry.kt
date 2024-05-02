@@ -1,6 +1,5 @@
 package com.example.caltrack.data
 
-
 sealed class LogEntry
 
 data class FoodLogItem(
@@ -12,9 +11,9 @@ data class FoodLogItem(
     val protein: Float = 0f,
     val fiber: Float = 0f,
     val time: String = "00:00",
-): LogEntry()
+) : LogEntry()
 
 data class WaterLogItem(
     val quantity: Float = 0f,
     val time: String = "00:00",
-): LogEntry()
+) : LogEntry()
