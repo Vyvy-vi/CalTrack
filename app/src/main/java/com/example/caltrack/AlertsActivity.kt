@@ -28,7 +28,7 @@ class AlertsActivity : AppCompatActivity() {
                 .setPersisted(true)
                 .setMinimumLatency(2000)
                 .setOverrideDeadline(10000)
-                //.setPeriodic(900000) // 1800000
+                .setPeriodic(900000)
                 .setRequiresCharging(false)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
 
