@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/top_bar"
-        android:name="com.example.caltrack.fragments.TopbarFragment"
+        android:name="com.vyvyvi.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
@@ -59,74 +59,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/display_txt"
-        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
+        android:text="Calories Consumed"
         android:textSize="20dp" />
+    <TextView
+        android:id="@+id/heroTxt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heroTxt"
+        android:layout_margin="2dp"
+        android:text="water cosumed"
+        android:gravity="center"
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/heroDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/heroTxt"
+        android:layout_below="@+id/heroTxt2"
         android:layout_margin="10dp"
         android:gravity="center" />
 
-    <GridLayout
+    <GridView
+        android:id="@+id/menuGrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/heroDesc"
-        android:layout_alignParentBottom="true"
-        android:columnCount="2"
-        android:gravity="center"
-        android:rowCount="2">
+        android:layout_below="@id/heroDesc"
+        android:layout_marginHorizontal="10dp"
+        android:numColumns="3"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"/>
 
-        <Button
-            android:id="@+id/logfoodBtn"
-            android:background="@drawable/button_card_background"
-            android:layout_height="74dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:drawableTop="@drawable/ic_log"
-            android:paddingVertical="30dp"
-            android:text="Log Food"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/logWaterBtn"
-            android:background="@drawable/button_card_background"
-            android:layout_height="100dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:drawableTop="@drawable/ic_waterlog"
-            android:paddingVertical="30dp"
-            android:text="Log Water"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/historyBtn"
-            android:background="@drawable/button_card_background"
-            android:layout_height="93dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:drawableTop="@drawable/ic_history"
-            android:paddingVertical="30dp"
-            android:text="History"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/alertBtn"
-            android:background="@drawable/button_card_background"
-            android:layout_height="97dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:drawableTop="@drawable/ic_alerts"
-            android:paddingVertical="30dp"
-            android:text="Alerts"
-            android:textSize="20dp" />
-
-    </GridLayout>
 </RelativeLayout>

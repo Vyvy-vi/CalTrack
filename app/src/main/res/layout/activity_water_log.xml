@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/top_bar"
-        android:name="com.example.caltrack.fragments.TopbarFragment"
+        android:name="com.vyvyvi.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

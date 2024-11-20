@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReadResearchActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Articles"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:padding="5dp"/>
+
+    <WebView
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/downloadBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/closeBtn"
+        android:text="Download Article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="5dp"/>
+
+    <Button
+        android:id="@+id/closeBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/downloadBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Close Article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="5dp"/>
+
+    <ListView
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

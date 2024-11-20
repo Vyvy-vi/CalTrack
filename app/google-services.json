@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "726292201818",
+    "firebase_url": "https://caltrack-8cb40-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "caltrack-8cb40",
+    "storage_bucket": "caltrack-8cb40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726292201818:android:c28f159b34d5de34dbb363",
+        "android_client_info": {
+          "package_name": "com.vyvyvi.caltrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2jbNXOf-OQ0QqBulJOFCfGm9k-XQjYgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

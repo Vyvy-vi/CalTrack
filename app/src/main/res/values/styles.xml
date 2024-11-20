@@ -5,4 +5,7 @@
         <item name="android:minHeight">90dip</item>
         <item name="android:maxHeight">120dip</item>
     </style>
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

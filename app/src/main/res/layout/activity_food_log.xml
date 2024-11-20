@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/top_bar"
-        android:name="com.example.caltrack.fragments.TopbarFragment"
+        android:name="com.vyvyvi.caltrack.fragments.TopbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
@@ -40,14 +40,14 @@
 
     <fragment
         android:id="@+id/log_input"
-        android:name="com.example.caltrack.fragments.FoodLogInputFragment"
+        android:name="com.vyvyvi.caltrack.fragments.FoodLogInputFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/food_details" />
 
     <fragment
         android:id="@+id/log_output"
-        android:name="com.example.caltrack.fragments.FoodLogOutputFragment"
+        android:name="com.vyvyvi.caltrack.fragments.FoodLogOutputFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/log_input" />
